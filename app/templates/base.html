@@ -16,14 +16,18 @@
             theme: {
                 extend: {
                     colors: {
-                        gold: "#D4A017",        /* main gold tone */
-                        lightgold: "#E1B74F",   /* highlight */
-                        darkgold: "#A77C14"     /* shadow */
+                        gold: "#FFD700",        /* true gold */
+                        lightgold: "#FFF1A8"    /* highlight gold */
+                        
+                    },
+                    backgroundImage: {
+                        darkgold: "linear-gradient(135deg, #B89B00 0%, #FFD700 45%, #E6B800 70%, #B89B00 100%)"
                     }
                 }
             }
         }
     </script>
+
 
     <!-- google fonts  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -85,7 +89,7 @@
         font-optical-sizing: auto;
         font-weight: 400;
         font-style: normal;
-   
+
 
 
         /* ------------------------------------- */
@@ -107,7 +111,7 @@
         font-weight: 600;
         /* adjust as needed */
         letter-spacing: 0.5px;
-        
+
     }
 
     /* All paragraphs */
@@ -224,7 +228,8 @@
             © {% now "Y" %} Prime. All rights reserved.
         </div>
         <div class="bg-gold py-4 text-center text-white pb-12">
-            <a href="https://www.inspirezesttechnologies.com/" target="_blank">Developed By Inspirezesttechnologies pvt ltd</a>
+            <a href="https://www.inspirezesttechnologies.com/" target="_blank">Developed By Inspirezesttechnologies pvt
+                ltd</a>
         </div>
     </footer>
 
@@ -232,12 +237,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000,        
-            easing: 'ease-out',    
-            once: true,            
-            mirror: false,         
-            offset: 80,          
-                       
+            duration: 1000,
+            easing: 'ease-out',
+            once: true,
+            mirror: false,
+            offset: 80,
+
         });
     </script>
 
