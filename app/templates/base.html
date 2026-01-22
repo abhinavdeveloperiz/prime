@@ -133,6 +133,66 @@
 </style>
 
 
+
+<!-- Floating Call & WhatsApp Buttons -->
+<div class="fixed right-4 bottom-12 z-[9999] flex flex-col gap-3">
+
+  <!-- Call Button -->
+  <a href="tel:0510016698"
+     class="w-14 h-14 flex items-center justify-center rounded-full bg-blue-600 text-white text-xl shadow-lg hover:scale-110 transition"
+     title="Call Us">
+    <i class="fa-solid fa-phone"></i>
+  </a>
+
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/0510016698"
+     target="_blank"
+     class="w-14 h-14 flex items-center justify-center rounded-full bg-green-500 text-white text-xl shadow-lg hover:scale-110 transition"
+     title="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+</div>
+
+
+
+
+
+
+<script>
+    function openWhatsApp() {
+        const chatBox = document.getElementById("wa-chat");
+        const textBox = document.getElementById("wa-text");
+
+        const message = "Hello, I am interested in your services.";
+        const phone = "0510016698";
+
+        chatBox.style.display = "block";
+        textBox.innerHTML = "";
+
+        let i = 0;
+        const typing = setInterval(() => {
+            textBox.innerHTML += message.charAt(i);
+            i++;
+            if (i >= message.length) {
+                clearInterval(typing);
+                setTimeout(() => {
+                    window.location.href =
+                        "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+                }, 700);
+            }
+        }, 40);
+    }
+</script>
+
+
+
+
+
+
+
+
+
 <body class="bg-gray-100 text-gray-900">
 
     <!-- NAVBAR -->
@@ -140,9 +200,11 @@
         <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
 
             <!-- Logo -->
-            <a href="/" class="flex items-center">
+            <a href="/" class="flex flex-col items-center">
                 <img src="{% static 'images/logo.png' %}" alt="Logo" class="h-16 w-auto" />
+                <h1 class="mt-1 font-bold">PRIME HUB</h1>
             </a>
+
 
 
             <!-- Menu -->
