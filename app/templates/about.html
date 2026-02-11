@@ -28,7 +28,7 @@
 
         <!-- IMAGE -->
         <div data-aos="fade-right ">
-            <img src="https://images.pexels.com/photos/3184635/pexels-photo-3184635.jpeg"
+            <img src="{{ about.image.url }}"
                 class="w-full h-80 object-cover rounded-xl shadow-lg">
         </div>
 
@@ -125,7 +125,7 @@
 
         <!-- LEFT IMAGE -->
         <div data-aos="fade-right">
-            <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?cs=srgb&dl=pexels-fauxels-3183150.jpg&fm=jpg"
+            <img src="{{ about_business.image.url }}"
                 alt="About Prime Hub" class="w-full h-full object-cover rounded-xl shadow-lg">
         </div>
 
@@ -252,26 +252,16 @@
 
         <div class="grid md:grid-cols-3 gap-12">
 
-            <div class="text-center" data-aos="fade-right">
-                <img src="https://png.pngtree.com/png-vector/20240913/ourmid/pngtree-cartoon-user-avatar-vector-png-image_13572227.png"
-                     class="w-48 h-48 mx-auto rounded-full shadow-md mb-6 object-cover">
-                <h3 class="text-xl font-bold mb-2">Ahmed Al-Mansour</h3>
-                <p class="text-gray-700">Managing Director</p>
-            </div>
-
-            <div class="text-center" data-aos="fade-up">
-                <img src="https://png.pngtree.com/png-vector/20240913/ourmid/pngtree-cartoon-user-avatar-vector-png-image_13572227.png"
-                     class="w-48 h-48 mx-auto rounded-full shadow-md mb-6 object-cover">
-                <h3 class="text-xl font-bold mb-2">Sarah Khalid</h3>
-                <p class="text-gray-700">Operations Manager</p>
-            </div>
+            {% for t in team %}
 
             <div class="text-center" data-aos="fade-left">
-                <img src="https://png.pngtree.com/png-vector/20240913/ourmid/pngtree-cartoon-user-avatar-vector-png-image_13572227.png"
+                <img src="{{ t.photo.url }}"
                      class="w-48 h-48 mx-auto rounded-full shadow-md mb-6 object-cover">
-                <h3 class="text-xl font-bold mb-2">Mohammed Raed</h3>
-                <p class="text-gray-700">Government Services Specialist</p>
+                <h3 class="text-xl font-bold mb-2">{{t.name}}</h3>
+                <p class="text-gray-700">{{t.position}}</p>
             </div>
+
+            {% endfor %}
 
         </div>
     </div>

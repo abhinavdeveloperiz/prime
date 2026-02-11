@@ -18,7 +18,18 @@ class AboutUs(models.Model):
     image=models.ImageField(upload_to='about_us/')
 
     def __str__(self):
-        return "About Us Image"
+        return "About Introduction Image"
+    
+    class Meta:
+        verbose_name = "About Us Introduction"
+        verbose_name_plural = "About Us Introduction"
+
+
+class AboutBusiness(models.Model):
+    image=models.ImageField(upload_to='about_us/')
+
+    def __str__(self):
+        return "About Image"
     
     class Meta:
         verbose_name = "About Us"
@@ -28,7 +39,7 @@ class AboutUs(models.Model):
 class Service(models.Model):
     image = models.ImageField(upload_to='services/')
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(null=True ,blank=True)
 
     def __str__(self):
         return self.title
@@ -36,6 +47,7 @@ class Service(models.Model):
     class Meta:
         verbose_name = "Service"
         verbose_name_plural = "Services"
+
 
 class Gallery(models.Model):
     image = models.ImageField(upload_to='gallery/')
@@ -61,6 +73,7 @@ class MeetOurTeam(models.Model):
     class Meta:
         verbose_name = "Our Team"
         verbose_name_plural = "Our Team"
+
 
 class Testimonial(models.Model):
     name = models.CharField(max_length=100)
