@@ -1,0 +1,580 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<!-- HERO / BANNER SECTION -->
+<section class="relative h-[62vh] md:h-[82vh] lg:h-[77vh] w-full bg-cover bg-center flex items-center"
+    style="background-image: url('{{banner.image.url}}');">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <!-- Content -->
+    <div class="relative max-w-7xl mx-auto px-6 text-white" data-aos="fade-up">
+
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4" >
+            Professional Solutions for a Smooth Start
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-200 max-w-2xl mb-6">
+            Your journey begins here, with a trusted partner committed to making business setup simple
+        </p>
+
+        <div class="flex space-x-4">
+            <a href="/services/"
+                class="px-6 py-3 bg-darkblue text-white font-semibold rounded-md shadow-lg hover:bg-transparent hover:border transition-all duration-200">
+                Explore Services
+            </a>
+
+            <a href="/contact/"
+                class="px-6 py-3 border border-white/70 text-white font-semibold rounded-md hover:bg-darkblue transition-all duration-200">
+                Contact Us
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- STATS / COUNTERS SECTION -->
+<section class="py-10 bg-lightblue text-white">
+    <div class="max-w-7xl mx-auto px-6 text-center" >
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+            <!-- Counter 1 -->
+            <div data-aos="zoom-in" data-aos-delay="100">
+                <h3 class="text-5xl font-bold counter" data-target="1500">0</h3>
+                <p class="mt-2 text-lg">Happy Customers</p>
+            </div>
+
+
+            <!-- Counter 3 -->
+            <div data-aos="zoom-in" data-aos-delay="300">
+                <h3 class="text-5xl font-bold counter" data-target="25">0</h3>
+                <p class="mt-2 text-lg">Years of Experience</p>
+            </div>
+
+            <!-- Counter 2 -->
+            <div data-aos="zoom-out" data-aos-delay="200">
+                <h3 class="text-5xl font-bold counter" data-target="320">0</h3>
+                <p class="mt-2 text-lg">Completed Projects</p>
+            </div>
+
+            <!-- Counter 4 -->
+            <div data-aos="zoom-out" data-aos-delay="400">
+                <h3 class="text-5xl font-bold counter" data-target="50">0</h3>
+                <p class="mt-2 text-lg">Awards & Recognitions</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Counter JS -->
+<script>
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200; // higher number = slower
+
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+
+            const increment = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target;
+            }
+        }
+
+        updateCount();
+    });
+</script>
+
+
+
+
+
+
+<section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+        <!-- LEFT IMAGE -->
+        <div data-aos="fade-right">
+            <img src="{{about.image.url}}"
+                alt="About Prime Hub" class="w-full h-full object-cover rounded-xl shadow-lg">
+        </div>
+
+        <!-- RIGHT TEXT -->
+        <div data-aos="fade-left" class="text-gold">
+            <h2 class="text-4xl font-semibold mb-6">
+                About Prime Hub Business Services
+            </h2>
+
+            <p class="mb-4 text-lg leading-relaxed text-justify text-darkblue" data-aos="fade-left">
+                Prime Hub Business Services is committed to delivering seamless, end-to-end
+                support for businesses across Saudi Arabia. With a focus on precision, compliance,
+                and efficiency, we ensure every stage of your business journey is handled with care.
+            </p>
+
+            <p class="mb-4 text-lg leading-relaxed text-justify text-darkblue" data-aos="fade-left">
+                From company formation and government documentation to Muroor services,
+                TGA approvals, visa processing, payroll, and tax compliance—we serve as your
+                trusted partner for all operational and regulatory needs.
+            </p>
+
+            <p class="text-lg leading-relaxed text-justify text-darkblue" data-aos="fade-left">
+                With years of experience and a dedicated team of experts, we simplify complex
+                procedures, eliminate delays, and help your business grow with confidence.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+<section class="py-20 bg-lightblue text-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-4xl font-semibold text-white mb-10" data-aos="slide-right" data-aos-delay="0">
+            Our Signature Approach
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-10">
+
+
+            <div class="flex items-start gap-4" data-aos="slide-right" data-aos-delay="100">
+                <i class="fa-solid fa-car-burst text-4xl mt-1 p-2"></i>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        1. Complete Muroor & TGA Services
+                    </h3>
+                    <p>
+                        Expert handling of Muroor services, TGA approvals, vehicle registration,
+                        license renewals, transfers, and all vehicle procedures—fast, accurate, and compliant.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4" data-aos="slide-right" data-aos-delay="100">
+                <i class="fa-solid fa-file-shield text-4xl mt-1 p-2"></i>
+                <div>
+                    <h3 class="text-xl font-semibold  mb-2">
+                        2. Government & Legal Services
+                    </h3>
+                    <p>
+                        Specialized in Visa Processing, Commercial Services, Baladiya approvals,
+                        and all governmental documentation with precision and reliability.
+                    </p>
+                </div>
+            </div>
+
+
+            <div class="flex items-start gap-4" data-aos="slide-right" data-aos-delay="100">
+                <i class="fa-solid fa-calculator text-4xl mt-1 p-4"></i>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        3. Efficient Business Accounting
+                    </h3>
+                    <p>
+                        Zakat, VAT, billing software, and financial management solutions tailored
+                        to meet modern business needs.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4" data-aos="slide-right" data-aos-delay="100">
+                <i class="fa-solid fa-handshake text-4xl mt-1 p-2"></i>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">
+                        4. Complete Business Support
+                    </h3>
+                    <p>
+                        Full-spectrum support including company formation, licensing, visas,
+                        and tax compliance for seamless business operations in Saudi Arabia.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- SERVICES SECTION -->
+<section class="py-24 bg-white text-white">
+    <h2 class="text-4xl font-bold mb-12 text-center text-gold" data-aos="fade-down">
+        Our Services
+    </h2>
+
+    <div class="mx-auto px-0">
+
+        <!-- Horizontal Scroll Wrapper -->
+        <div class="flex overflow-x-auto scrollbar-hide space-x-4 px-4">
+
+            {% for s in services %}
+
+            <div class="relative group h-[400px] w-[320px] md:w-[450px] overflow-hidden flex-shrink-0"
+                data-aos="zoom-in">
+
+                <img src="{{ s.image.url }}"
+                    alt="{{ s.title }}"
+                    class="object-cover w-full h-full transition-transform duration-500 group-hover:scale-110">
+
+                <div class="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center p-4">
+                    <h3 class="text-2xl font-semibold mb-2">{{ s.title }}</h3>
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+        <!-- View More Button -->
+        <div class="mt-12 text-center">
+            <a href="/services/"
+                class="px-8 py-3 bg-darkblue text-white font-semibold rounded-md shadow-lg transition-all duration-300">
+                View More
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<section class="py-20 bg-white text-darkblue">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Heading -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-3xl font-bold uppercase text-gold">Why Choose Us</h2>
+            <p class="mt-4 text-lg opacity-90">
+                We deliver exceptional value with unmatched quality, reliability, and professionalism.
+            </p>
+        </div>
+
+        <!-- Feature Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <!-- Item 1 -->
+            <div class=" p-8 text-center" data-aos="zoom-in" data-aos-delay="100">
+                <img src="/static/icons/team.gif" alt="Expert Team Icon" class="w-auto h-20 mx-auto mb-5 opacity-95" />
+                <h3 class="text-2xl font-semibold mb-3 uppercase">Expert Team</h3>
+                <p class="opacity-95">
+                    Our experienced professionals are dedicated to delivering top-tier solutions
+                    tailored to your needs.
+                </p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class=" p-8 text-center" data-aos="zoom-out" data-aos-delay="300">
+                <img src="/static/icons/medal-.gif" alt="Quality Icon" class="w-auto h-20 mx-auto mb-5 opacity-95" />
+                <h3 class="text-2xl font-semibold mb-3 uppercase">Quality Assurance</h3>
+                <p class="opacity-95">
+                    We follow strict quality standards to ensure every project exceeds expectations.
+                </p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class=" p-8 text-center" data-aos="zoom-in" data-aos-delay="100">
+                <img src="/static/icons/helpdesk.gif" alt="Support Icon" class="w-auto h-20 mx-auto mb-5 opacity-95" />
+                <h3 class="text-2xl font-semibold mb-3 uppercase">Customer Support</h3>
+                <p class="opacity-95">
+                    We provide reliable support with quick response times to keep your operations smooth.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="py-24 bg-lightblue text-white">
+    <div class="max-w-6xl mx-auto px-6">
+
+        <!-- Section Header -->
+        <div class="text-center mb-14">
+            <h2 class="text-4xl font-bold" data-aos="fade-up">How We Work</h2>
+            <p class="text-white text-lg mt-2" data-aos="fade-up" data-aos-delay="100">
+                A streamlined process designed for speed, precision, and compliance.
+            </p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="relative border-l-4 border-white/60 ml-6 space-y-14">
+
+            <!-- Step 1 -->
+            <div class="pl-10 relative" data-aos="fade-up">
+                <span class="absolute -left-[30px] top-1 bg-white text-gold w-12 h-12 
+                               flex items-center justify-center rounded-full shadow-xl 
+                               text-xl font-bold">
+                    1
+                </span>
+
+                <h3 class="text-2xl font-semibold mb-2">Consultation & Requirement Study</h3>
+                <p class="text-white/90 text-lg">
+                    We analyze your needs and propose the most efficient plan for your business requirements.
+                </p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="pl-10 relative" data-aos="fade-up" data-aos-delay="150">
+                <span class="absolute -left-[30px] top-1 bg-white text-gold w-12 h-12 
+                               flex items-center justify-center rounded-full shadow-xl 
+                               text-xl font-bold">
+                    2
+                </span>
+
+                <h3 class="text-2xl font-semibold mb-2">Document Preparation</h3>
+                <p class="text-white/90 text-lg">
+                    All required documents are prepared, verified, and submitted with 100% accuracy.
+                </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="pl-10 relative" data-aos="fade-up" data-aos-delay="300">
+                <span class="absolute -left-[30px] top-1 bg-white text-gold w-12 h-12 
+                               flex items-center justify-center rounded-full shadow-xl 
+                               text-xl font-bold">
+                    3
+                </span>
+
+                <h3 class="text-2xl font-semibold mb-2">Government Processing</h3>
+                <p class="text-white/90 text-lg">
+                    We coordinate with the required authorities for approvals, renewals, and verifications.
+                </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="pl-10 relative" data-aos="fade-up" data-aos-delay="450">
+                <span class="absolute -left-[30px] top-1 bg-white text-gold w-12 h-12 
+                               flex items-center justify-center rounded-full shadow-xl 
+                               text-xl font-bold">
+                    4
+                </span>
+
+                <h3 class="text-2xl font-semibold mb-2">Final Delivery & Support</h3>
+                <p class="text-white/90 text-lg">
+                    Completed services delivered with ongoing support for future requirements.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+<section class="py-24 bg-white relative overflow-hidden">
+
+
+    <div class="absolute inset-0 bg-white"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6">
+
+        <!-- Title -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gold" data-aos="zoom-in">
+                Our Key Strengths
+            </h2>
+            <p class="text-gray-700 text-lg mt-3" data-aos="zoom-in" data-aos-delay="120">
+                We deliver premium-quality, reliable, and efficient services with industry-leading excellence.
+            </p>
+        </div>
+
+        <!-- Cards Row -->
+        <div class="grid md:grid-cols-3 gap-10">
+
+            <!-- Card 1 -->
+            <div class="bg-lightblue text-white p-10 rounded-2xl shadow-lg border border-gold/30 
+                        hover:shadow-2xl hover:-translate-y-2 hover:bg-darkgold/95 
+                        transition-all duration-300"
+                 data-aos="zoom-in">
+
+                <i class="fa-solid fa-business-time text-5xl mb-5 opacity-90"></i>
+                <h3 class="text-2xl font-semibold mb-3">Fast Execution</h3>
+                <p class="opacity-90">
+                    Optimized internal workflows deliver faster processing, reduced delays, and seamless completion.
+                </p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-lightblue text-white p-10 rounded-2xl shadow-lg border border-gold/30
+                        hover:shadow-2xl hover:-translate-y-2 hover:bg-darkgold/95 
+                        transition-all duration-300"
+                 data-aos="zoom-out" >
+
+                <i class="fa-solid fa-building-circle-check text-5xl mb-5 opacity-90"></i>
+                <h3 class="text-2xl font-semibold mb-3">Government Expertise</h3>
+                <p class="opacity-90">
+                    Deep experience in Muroor, Baladiya, TGA, Visas, Chamber, Licensing, and Documentation workflows.
+                </p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-lightblue text-white p-10 rounded-2xl shadow-lg border border-gold/30
+                        hover:shadow-2xl hover:-translate-y-2 hover:bg-darkgold/95 
+                        transition-all duration-300"
+                 data-aos="zoom-in" >
+
+                <i class="fa-solid fa-user-shield text-5xl mb-5 opacity-90"></i>
+                <h3 class="text-2xl font-semibold mb-3">Reliable & Secure</h3>
+                <p class="opacity-90">
+                    Maintained with confidentiality, compliance, and end-to-end data protection standards.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+<!-- TESTIMONIALS SECTION -->
+<section class="py-24 bg-gray-50">
+    <div class="max-w-5xl mx-auto px-6">
+
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-3xl font-bold text-gold">What Our Clients Say</h2>
+            <p class="text-gray-600 mt-3 text-lg">
+                Genuine feedback from our valued customers
+            </p>
+        </div>
+
+        <div class="relative overflow-hidden">
+
+            <!-- Slides Container -->
+            <div id="testimonialSlider" class="flex transition-transform duration-700 ease-in-out">
+                {% for t in testi %}
+                
+
+                <!-- Slide 4 -->
+                <div class="min-w-full px-4">
+                    <div class="bg-white p-12 md:p-16 rounded-2xl shadow-xl text-center">
+                        <p class="text-gray-700 text-2xl md:text-3xl italic leading-relaxed mb-10">
+                            “{{ t.feedback }}”
+                        </p>
+                        <h3 class="font-bold text-2xl text-gray-900">{{ t.name }}</h3>
+                        <p class="text-gray-500 text-lg">{{ t.position }}</p>
+                    </div>
+                </div>
+
+
+                {% endfor %}
+
+              
+
+            </div>
+
+            <!-- Navigation Buttons -->
+            <button id="prevBtn"
+                class="absolute left-0 top-1/2 -translate-y-1/2 bg-black/80 text-white text-3xl px-4 py-3 rounded-r-xl hover:bg-black transition">
+                ‹
+            </button>
+
+            <button id="nextBtn"
+                class="absolute right-0 top-1/2 -translate-y-1/2 bg-black/80 text-white text-3xl px-4 py-3 rounded-l-xl hover:bg-black transition">
+                ›
+            </button>
+
+        </div>
+
+    </div>
+</section>
+
+<script>
+    const slider = document.getElementById("testimonialSlider");
+    const slides = slider.children.length;
+    let index = 0;
+
+    document.getElementById("nextBtn").onclick = () => {
+        index = (index + 1) % slides;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+    };
+
+    document.getElementById("prevBtn").onclick = () => {
+        index = (index - 1 + slides) % slides;
+        slider.style.transform = `translateX(-${index * 100}%)`;
+    };
+</script>
+
+
+
+
+
+
+<!-- PREMIUM CTA BANNER -->
+<section class="relative py-12 text-white overflow-hidden">
+    
+    <!-- Background -->
+    <div class="absolute inset-0 bg-cover bg-center"
+         style="background-image: url('https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg'); background-attachment: fixed;">
+    </div>
+    
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+
+    <!-- Content -->
+    <div class="relative max-w-4xl mx-auto text-center px-6" data-aos="fade-up">
+        <h2 class="text-4xl font-bold leading-tight drop-shadow-lg">
+            Grow Your Business With a Trusted Partner
+        </h2>
+        <p class="mt-5 text-md opacity-90">
+            Experience seamless documentation, fast processing, and complete support for all government services.
+        </p>
+
+        <a href="/services/"
+           class="mt-8 inline-block px-6 py-4 bg-darkblue text-white font-semibold text-md rounded-md shadow-xl transition-all duration-300">
+            Explore All Services
+        </a>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

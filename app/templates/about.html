@@ -1,0 +1,298 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- HERO / BANNER -->
+<section class="relative h-[35vh] md:h-[50vh] w-full bg-cover bg-center flex items-center"
+    style="background-image: url('https://media.istockphoto.com/id/1491196684/photo/business-people-celebrating-success-in-an-office.jpg?s=612x612&w=0&k=20&c=zQ5Ps5nQWi3S2futnwyOoqLMFxPzE8B04WltyPB6RyI=');">
+
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 text-white" data-aos="fade-up">
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
+            About Prime Hub Business Services
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-200 max-w-2xl">
+            Professional Solutions for a Smooth Start
+        </p>
+    </div>
+
+</section>
+
+
+
+<!-- INTRODUCTION -->
+<section class="py-20 bg-white text-gold">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+        <!-- IMAGE -->
+        <div data-aos="fade-right ">
+            <img src="{{ about.image.url }}"
+                class="w-full h-80 object-cover rounded-xl shadow-lg">
+        </div>
+
+        <!-- CONTENT -->
+        <div data-aos="fade-left">
+            <h2 class="text-4xl font-semibold mb-6">Introduction</h2>
+
+            <p class="text-lg leading-relaxed text-justify mb-4 text-darkblue">
+                Prime Hub Business Services delivers end-to-end support for business setup, PRO & GRO
+                assistance, and essential government services across Saudi Arabia. From company
+                registration and investment licensing to visa processing, payroll, insurance, Muroor services,
+                TGA requirements, and vehicle insurance—we streamline every step with precision and
+                expertise.
+            </p>
+
+            <p class="text-lg leading-relaxed text-justify text-darkblue">
+                Your journey begins here, with a trusted partner committed to making business setup
+                simple, efficient, and worry-free.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+<!-- SIGNATURE APPROACH / KEY FEATURES -->
+<section class="py-20 bg-lightblue text-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-4xl font-semibold mb-12" data-aos="slide-right">
+            Our Signature Approach
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-10">
+
+            <div class="flex items-start gap-4" data-aos="slide-right">
+                <i class="fa-solid fa-car-burst text-4xl mt-1 p-2"></i>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">1. Complete Muroor & TGA Services</h3>
+                    <p>
+                        Expert handling of vehicle procedures, TGA approvals, renewals, transfers,
+                        and registrations—ensuring speed, accuracy, and compliance.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4" data-aos="slide-right">
+                <i class="fa-solid fa-file-shield text-4xl mt-1 p-2"></i>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">2. Government & Legal Services</h3>
+                    <p>
+                        Visa processing, commercial services, General Services, and Baladiya approvals
+                        delivered with accuracy and complete reliability.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4" data-aos="slide-right">
+                <i class="fa-solid fa-calculator text-4xl mt-1 p-2"></i>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">3. Efficient Business Accounting</h3>
+                    <p>
+                        Zakat, VAT, billing solutions, and modern financial processes tailored to meet
+                        evolving business requirements.
+                    </p>
+                </div>
+            </div>
+
+            <div class="flex items-start gap-4" data-aos="slide-right">
+                <i class="fa-solid fa-handshake text-4xl mt-1 p-2"></i>
+                <div>
+                    <h3 class="text-xl font-semibold mb-2">4. Complete Business Support</h3>
+                    <p>
+                        Comprehensive services including licensing, company formation, visa solutions,
+                        payroll, tax compliance, and more.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- ABOUT COMPANY -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+        <!-- LEFT IMAGE -->
+        <div data-aos="fade-right">
+            <img src="{{ about_business.image.url }}"
+                alt="About Prime Hub" class="w-full h-full object-cover rounded-xl shadow-lg">
+        </div>
+
+        <!-- RIGHT TEXT -->
+        <div data-aos="fade-left" class="text-darkblue">
+            <h2 class="text-4xl font-semibold mb-6 text-gold">
+                About Prime Hub Business Services
+            </h2>
+
+            <p class="mb-4 text-lg leading-relaxed text-justify" data-aos="fade-left">
+                Prime Hub Business Services is committed to delivering seamless, end-to-end
+                support for businesses across Saudi Arabia. With a focus on precision, compliance,
+                and efficiency, we ensure every stage of your business journey is handled with care.
+            </p>
+
+            <p class="mb-4 text-lg leading-relaxed text-justify" data-aos="fade-left">
+                From company formation and government documentation to Muroor services,
+                TGA approvals, visa processing, payroll, and tax compliance—we serve as your
+                trusted partner for all operational and regulatory needs.
+            </p>
+
+            <p class="text-lg leading-relaxed text-justify" data-aos="fade-left">
+                With years of experience and a dedicated team of experts, we simplify complex
+                procedures, eliminate delays, and help your business grow with confidence.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+<!-- MISSION & VISION -->
+<section class="py-20 bg-white text-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-14">
+
+        <!-- MISSION -->
+        <div class="bg-lightblue p-10 rounded-xl shadow-md" data-aos="zoom-out">
+            <img src="/static/icons/mission.png" class="h-20 w-auto mb-5 mx-auto" />
+            <h3 class="text-3xl font-semibold text-center mb-4">Our Mission</h3>
+            <p class="text-lg text-center leading-relaxed">
+                To simplify and professionalize every business and government process through
+                fast, compliant, and dependable solutions—allowing our clients to focus
+                on growth, innovation, and long-term success.
+            </p>
+        </div>
+
+        <!-- VISION -->
+        <div class="bg-lightblue p-10 rounded-xl shadow-md" data-aos="zoom-in" data-aos-delay="200">
+            <img src="/static/icons/binocular.png" class="h-20 w-auto mb-5 mx-auto" />
+            <h3 class="text-3xl font-semibold text-center mb-4">Our Vision</h3>
+            <p class="text-lg text-center leading-relaxed">
+                To become Saudi Arabia’s most trusted and innovative business services partner,
+                known for excellence, transparency, and a strong commitment to the
+                entrepreneurial ecosystem.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+<section class="py-20 bg-white text-darkblue">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Heading -->
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-3xl font-bold uppercase text-gold">Why Choose Us</h2>
+            <p class="mt-4 text-lg opacity-90">
+                We deliver exceptional value with unmatched quality, reliability, and professionalism.
+            </p>
+        </div>
+
+        <!-- Feature Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <!-- Item 1 -->
+            <div class=" p-8 text-center" data-aos="zoom-in" data-aos-delay="100">
+                <img src="/static/icons/team.gif" alt="Expert Team Icon" class="w-auto h-20 mx-auto mb-5 opacity-95" />
+                <h3 class="text-2xl font-semibold mb-3 uppercase">Expert Team</h3>
+                <p class="opacity-95">
+                    Our experienced professionals are dedicated to delivering top-tier solutions
+                    tailored to your needs.
+                </p>
+            </div>
+
+            <!-- Item 2 -->
+            <div class=" p-8 text-center" data-aos="zoom-out" data-aos-delay="300">
+                <img src="/static/icons/medal-.gif" alt="Quality Icon" class="w-auto h-20 mx-auto mb-5 opacity-95" />
+                <h3 class="text-2xl font-semibold mb-3 uppercase">Quality Assurance</h3>
+                <p class="opacity-95">
+                    We follow strict quality standards to ensure every project exceeds expectations.
+                </p>
+            </div>
+
+            <!-- Item 3 -->
+            <div class=" p-8 text-center" data-aos="zoom-in" data-aos-delay="100">
+                <img src="/static/icons/helpdesk.gif" alt="Support Icon" class="w-auto h-20 mx-auto mb-5 opacity-95" />
+                <h3 class="text-2xl font-semibold mb-3 uppercase">Customer Support</h3>
+                <p class="opacity-95">
+                    We provide reliable support with quick response times to keep your operations smooth.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+<!-- OUR TEAM -->
+<section class="pb-20 bg-white text-gold">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-4xl font-semibold mb-12 text-center" data-aos="fade-up">
+            Meet Our Team
+        </h2>
+
+        <div class="grid md:grid-cols-3 gap-12">
+
+            {% for t in team %}
+
+            <div class="text-center" data-aos="fade-left">
+                <img src="{{ t.photo.url }}"
+                     class="w-48 h-48 mx-auto rounded-full shadow-md mb-6 object-cover">
+                <h3 class="text-xl font-bold mb-2">{{t.name}}</h3>
+                <p class="text-gray-700">{{t.position}}</p>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+<!-- FINAL CTA -->
+<section class="relative h-[28vh] flex items-center justify-center text-white">
+
+    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg"
+        class="absolute inset-0 w-full h-full object-cover">
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative text-center px-6 max-w-3xl">
+        <h1 class="text-3xl font-bold uppercase tracking-widest drop-shadow-xl mb-6">
+            Ready to Partner With Us?
+        </h1>
+
+        <a href="/contact"
+           class="inline-block px-10 py-3 bg-darkblue text-white font-semibold rounded-md shadow-lg hover:bg-lightgold transition">
+            Contact Us
+        </a>
+    </div>
+
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Prime Hub Business Services{% endblock %}</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: "#A67C00",        /* true gold */
+                        lightgold: "#FFF1A8",    /* highlight gold */
+                        lightblue: "#536AA0",   /* extracted from image */
+                        darkblue: "#1E2F6E"
+                    },
+                    backgroundImage: {
+                        darkgold: "linear-gradient(135deg, #B89B00 0%, #FFD700 45%, #E6B800 70%, #B89B00 100%)"
+                    }
+                }
+            }
+        }
+    </script>
+
+
+    <!-- google fonts  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="{% static 'images/logo.png' %}">
+
+    <!-- Apple Touch Icon (iOS Home Screen Icon) -->
+    <link rel="apple-touch-icon" href="{% static 'images/logo.png' %}">
+
+    <!-- Android / PWA Icon -->
+    <link rel="shortcut icon" href="{% static 'images/logo.png' %}" type="image/png">
+
+    <!-- Web App Manifest (Optional but recommended) -->
+    <link rel="manifest" href="{% static 'manifest.json' %}">
+
+    <!-- Open Graph Image (Social Sharing) -->
+    <meta property="og:image" content="{% static 'images/logo.png' %}">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="512">
+    <meta property="og:image:height" content="512">
+
+
+
+    <!-- Navbar Scroll Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const nav = document.getElementById("navbar");
+            window.addEventListener("scroll", () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add("bg-white/90", "shadow-md");
+                    nav.classList.remove("bg-transparent");
+                } else {
+                    nav.classList.remove("bg-white/90", "shadow-md");
+                    nav.classList.add("bg-transparent");
+                }
+            });
+        });
+    </script>
+
+</head>
+
+<style>
+    /* Apply Josefin Sans to the entire website */
+    html,
+    body {
+        font-family: "Josefin Sans", sans-serif !important;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+
+
+
+        /* ------------------------------------- */
+
+        overflow-x: hidden;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    /* Make headings correctly weighted */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: "Josefin Sans", sans-serif !important;
+        font-weight: 600;
+        /* adjust as needed */
+        letter-spacing: 0.5px;
+
+    }
+
+    /* All paragraphs */
+    p {
+        font-family: "Josefin Sans", sans-serif !important;
+        font-weight: 330;
+    }
+
+    /* Navbar & menu items */
+    nav,
+    a,
+    li,
+    button,
+    span,
+    div {
+        font-family: "Josefin Sans", sans-serif !important;
+    }
+</style>
+
+
+
+<!-- Page Loader -->
+<div id="page-loader"
+    class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-500">
+
+    <div class="flex flex-col items-center justify-center space-y-4">
+
+        <!-- Logo -->
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="w-24 h-auto animate-pulse">
+
+        <!-- Spinner -->
+        <div class="w-10 h-10 border-4 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
+
+    </div>
+</div>
+
+
+<script>
+    window.addEventListener("load", () => {
+        const loader = document.getElementById("page-loader");
+        loader.classList.add("opacity-0");
+
+        setTimeout(() => {
+            loader.style.display = "none";
+        }, 500);
+    });
+</script>
+
+
+
+
+
+
+<!-- Floating Call & WhatsApp Buttons -->
+<div class="fixed right-4 bottom-12 z-[9999] flex flex-col gap-3">
+
+    <!-- Call Button -->
+    <a href="tel:+966510016698"
+        class="w-14 h-14 flex items-center justify-center rounded-full bg-blue-600 text-white text-xl shadow-lg hover:scale-110 transition"
+        title="Call Us">
+        <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/966510016698" target="_blank"
+        class="w-14 h-14 flex items-center justify-center rounded-full bg-green-500 text-white text-xl shadow-lg hover:scale-110 transition"
+        title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</div>
+
+
+
+
+
+
+<script>
+    function openWhatsApp() {
+        const chatBox = document.getElementById("wa-chat");
+        const textBox = document.getElementById("wa-text");
+
+        const message = "Hello, I am interested in your services.";
+        const phone = "0510016698";
+
+        chatBox.style.display = "block";
+        textBox.innerHTML = "";
+
+        let i = 0;
+        const typing = setInterval(() => {
+            textBox.innerHTML += message.charAt(i);
+            i++;
+            if (i >= message.length) {
+                clearInterval(typing);
+                setTimeout(() => {
+                    window.location.href =
+                        "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+                }, 700);
+            }
+        }, 40);
+    }
+</script>
+
+
+
+
+
+
+
+
+
+<body class="bg-gray-100 text-gray-900">
+
+    <!-- NAVBAR -->
+    <header id="navbar" class="fixed w-full top-0 left-0 z-50 bg-transparent transition-all duration-300">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-2">
+
+            <!-- Logo -->
+            <a href="/" class="flex flex-col items-center">
+                <img src="{% static 'images/logo.png' %}" alt="Logo" class="h-16 w-auto" />
+                <h1 class="mt-1 font-bold">PRIME HUB</h1>
+            </a>
+
+
+
+            <!-- Menu -->
+            <ul class="hidden md:flex space-x-8 text-lg">
+                <li><a href="/" class="hover:text-gold duration-200">Home</a></li>
+                <li><a href="/about/" class="hover:text-gold duration-200">About</a></li>
+                <li><a href="/services/" class="hover:text-gold duration-200">Services</a></li>
+                <li><a href="/gallery/" class="hover:text-gold duration-200">Gallery</a></li>
+                <li><a href="/contact/" class="hover:text-gold duration-200">Contact</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <button id="menuBtn" class="md:hidden text-2xl text-gold">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white/70 shadow-lg py-4 px-6 space-y-4 text-lg">
+            <a href="/" class="block hover:text-gold">Home</a>
+            <a href="/about/" class="block hover:text-gold">About</a>
+            <a href="/services/" class="block hover:text-gold">Services</a>
+            <a href="/gallery/" class="block hover:text-gold">Gallery</a>
+            <a href="/contact/" class="block hover:text-gold">Contact</a>
+        </div>
+
+        <script>
+            document.getElementById("menuBtn").addEventListener("click", () => {
+                const menu = document.getElementById("mobileMenu");
+                menu.classList.toggle("hidden");
+            });
+        </script>
+    </header>
+
+    <!-- MAIN CONTENT -->
+
+    {% block content %}
+    {% endblock %}
+
+
+    <!-- FOOTER -->
+    <footer class="bg-darkblue text-white">
+        <div class="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+
+            <!-- About -->
+            <div>
+                <h3 class="text-xl font-bold mb-3">About Us</h3>
+                <p class="text-white/90">
+                    We provide high-quality services with a focus on customer satisfaction and excellence.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="text-xl font-bold mb-3">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="/" class="hover:text-black">Home</a></li>
+                    <li><a href="/about/" class="hover:text-black">About</a></li>
+                    <li><a href="/services/" class="hover:text-black">Services</a></li>
+                    <li><a href="/gallery/" class="hover:text-black">Gallery</a></li>
+                    <li><a href="/contact/" class="hover:text-black">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <h3 class="text-xl font-bold mb-3">Contact</h3>
+                <ul class="space-y-2">
+                    <li><i class="fa-solid fa-location-dot mr-2"></i>7735 King Khalid Road, <br>
+                        Al-Baghdadiyah Al-Sharqiyah,<br>
+                        JABC5453, 5453, Jeddah 22235,<br>
+                        Saudi Arabia</li>
+                    <li><i class="fa-solid fa-phone mr-2"></i>+966 51 001 6698</li>
+                    <li><i class="fa-solid fa-envelope mr-2"></i>Info@primehubksa.net</li>
+                </ul>
+
+                <!-- Social -->
+                <div class="mt-4 flex space-x-4 text-xl">
+                    <a href="https://www.facebook.com/share/16pV9kbDCC/" class="hover:text-blue-500" target="_blank"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <!-- <a href="#" class="hover:text-red-500" target="_blank"><i class="fa-brands fa-youtube"></i></a> -->
+                    <a href="https://www.threads.com/@primehub_sa" class="hover:text-black" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-threads"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/primehub_sa/" class="hover:text-red-500" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-lightblue py-4 pt-8 text-center text-white border-b border-darkgold">
+            © {% now "Y" %} Prime. All rights reserved.
+        </div>
+        <div class="bg-lightblue py-4 text-center text-white pb-12">
+            <a href="https://www.inspirezesttechnologies.com/" class="hover:text-gray-300" target="_blank">Developed By
+                InspireZest Technologies pvt
+                ltd</a>
+        </div>
+    </footer>
+
+    <!-- AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-out',
+            once: true,
+            mirror: false,
+            offset: 80,
+
+        });
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,129 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+
+
+
+<!-- HERO / BANNER -->
+<section class="relative h-[35vh] md:h-[50vh] w-full bg-cover bg-center flex items-center"
+    style="background-image: url('https://media.istockphoto.com/id/1491196684/photo/business-people-celebrating-success-in-an-office.jpg?s=612x612&w=0&k=20&c=zQ5Ps5nQWi3S2futnwyOoqLMFxPzE8B04WltyPB6RyI=');">
+
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 text-white" data-aos="fade-up">
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
+            Our Services
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-200 max-w-2xl">
+            End-to-end business support designed to simplify operations, ensure compliance,
+            and accelerate growth across Saudi Arabia.
+        </p>
+    </div>
+
+</section>
+
+
+
+<!-- STATS / COUNTERS SECTION -->
+<section class="py-10 bg-lightblue text-white">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+
+            <!-- Counter 1 -->
+            <div data-aos="zoom-in" data-aos-delay="100">
+                <h3 class="text-5xl font-bold counter" data-target="1500">0</h3>
+                <p class="mt-2 text-lg">Happy Customers</p>
+            </div>
+
+
+            <!-- Counter 3 -->
+            <div data-aos="zoom-in" data-aos-delay="300">
+                <h3 class="text-5xl font-bold counter" data-target="25">0</h3>
+                <p class="mt-2 text-lg">Years of Experience</p>
+            </div>
+
+            <!-- Counter 2 -->
+            <div data-aos="zoom-out" data-aos-delay="200">
+                <h3 class="text-5xl font-bold counter" data-target="320">0</h3>
+                <p class="mt-2 text-lg">Completed Projects</p>
+            </div>
+
+            <!-- Counter 4 -->
+            <div data-aos="zoom-out" data-aos-delay="400">
+                <h3 class="text-5xl font-bold counter" data-target="50">0</h3>
+                <p class="mt-2 text-lg">Awards & Recognitions</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- Counter JS -->
+<script>
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200; // higher number = slower
+
+    counters.forEach(counter => {
+        const updateCount = () => {
+            const target = +counter.getAttribute('data-target');
+            const count = +counter.innerText;
+
+            const increment = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = target;
+            }
+        }
+
+        updateCount();
+    });
+</script>
+
+
+
+
+
+
+<section id="services" class="py-20 bg-white text-black">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <h2 class="text-4xl font-semibold text-gold mb-10 text-center" data-aos="fade-up">
+            End-to-End Support You Can Trust
+        </h2>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+
+            {% for s in service %}
+            <!-- 1. Muroor Services -->
+            <div class="relative group h-64 rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition"
+                style="background-image: url('{{s.image.url}}'); background-size: cover; background-position: center;"
+                data-aos="fade-up">
+                <div class="absolute inset-0 bg-black/50 group-hover:bg-black/70 transition"></div>
+                <div class="absolute bottom-0 p-6 text-white">
+                    <h3 class="text-xl font-semibold text-lightgold">{{s.title}}</h3>
+                    {% if s.description %}
+                    <p class="text-gray-200 text-sm">{{s.description}}</p>
+           
+                    {% endif %}
+
+                </div>
+            </div>
+
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+{% endblock %}

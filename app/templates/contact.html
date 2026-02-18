@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- HERO / BANNER -->
+<section class="relative h-[35vh] md:h-[50vh] w-full bg-cover bg-center flex items-center"
+    style="background-image: url('https://images.pexels.com/photos/3184357/pexels-photo-3184357.jpeg');">
+
+    <div class="absolute inset-0 bg-black/50"></div>
+
+    <div class="relative max-w-7xl mx-auto px-6 text-white" data-aos="fade-up">
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
+            Contact Us
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-200 max-w-2xl">
+            Let’s discuss how we can support your business
+        </p>
+    </div>
+</section>
+
+
+<!-- CONTACT INFO -->
+<section class="py-20 bg-white text-darkblue">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-3 gap-10 text-center">
+
+        <div data-aos="zoom-in">
+            <i class="fa-solid fa-location-dot text-4xl mb-4"></i>
+            <h3 class="text-2xl font-semibold mb-2 uppercase">Address</h3>
+            <p class="opacity-90 ">
+                Al-Baghdadiyah Al-Sharqiyah,<br>
+                Saudi Arabia
+            </p>
+        </div>
+
+        <div data-aos="zoom-in" data-aos-delay="150">
+            <i class="fa-solid fa-phone-volume text-4xl mb-4"></i>
+            <h3 class="text-2xl font-semibold mb-2 uppercase">Phone</h3>
+            <p class="opacity-90">
+                +966 51 001 6698
+            </p>
+        </div>
+
+        <div data-aos="zoom-in" data-aos-delay="300">
+            <i class="fa-solid fa-envelope-open-text text-4xl mb-4"></i>
+            <h3 class="text-2xl font-semibold mb-2 uppercase">Email</h3>
+            <p class="opacity-90">
+                Info@primehubksa.net
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CONTACT FORM & MAP -->
+<section class="pb-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6 py-6 grid md:grid-cols-2 gap-14 items-start ">
+
+        <!-- CONTACT FORM -->
+        <div data-aos="fade-right" class="bg-white p-10 rounded-xl hover:shadow-xl ">
+            <h2 class="text-3xl font-semibold mb-8 text-gold">
+                Send Us a Message
+            </h2>
+
+            <form method="post" action="">
+                {% csrf_token %}
+
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">Full Name</label>
+                    <input type="text" name="name" required
+                        class="w-full border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-gold focus:outline-none">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">Email Address</label>
+                    <input type="email" name="email" required
+                        class="w-full border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-gold focus:outline-none">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">Phone Number</label>
+                    <input type="text" name="phone"
+                        class="w-full border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-gold focus:outline-none">
+                </div>
+
+                <div class="mb-6">
+                    <label class="block mb-2 font-medium">Message</label>
+                    <textarea name="message" rows="5" required
+                        class="w-full border border-gray-300 rounded-md px-4 py-3 focus:ring-2 focus:ring-gold focus:outline-none"></textarea>
+                </div>
+
+                <button type="submit"
+                    class="w-full bg-darkblue text-white font-semibold py-3 rounded-md shadow-md hover:bg-lightblue transition">
+                    Send Message
+                </button>
+            </form>
+        </div>
+
+        <!-- GOOGLE MAP -->
+        <div data-aos="fade-left" class="rounded-xl overflow-hidden shadow-lg h-[500px]">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3538.133313574656!2d39.18941487526979!3d21.502240680268216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15c3cffe088a67cf%3A0x52450aca48412c7b!2sPrime%20Hub%20Business%20Services!5e1!3m2!1sen!2sin!4v1769578141198!5m2!1sen!2sin"
+                class="w-full h-full border-0"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FINAL CTA -->
+<section class="relative h-[28vh] flex items-center justify-center text-white">
+
+    <img src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg"
+        class="absolute inset-0 w-full h-full object-cover">
+
+    <div class="absolute inset-0 bg-black/60"></div>
+
+    <div class="relative text-center px-6 max-w-3xl">
+        <h1 class="text-3xl font-bold uppercase tracking-widest drop-shadow-xl mb-6">
+            We’re Ready When You Are
+        </h1>
+
+        <a href="/services"
+           class="inline-block px-10 py-3 bg-darkblue text-white font-semibold rounded-md shadow-lg hover:bg-lightblue transition">
+            View Our Services
+        </a>
+    </div>
+</section>
+
+{% endblock %}
