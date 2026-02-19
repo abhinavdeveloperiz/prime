@@ -136,19 +136,36 @@
 
 <!-- Page Loader -->
 <div id="page-loader"
-    class="fixed inset-0 z-[9999] flex items-center justify-center bg-white transition-opacity duration-500">
+    class="fixed inset-0 z-[9999] flex items-center justify-center bg-blue-100 transition-opacity duration-500">
 
-    <div class="flex flex-col items-center justify-center space-y-4">
+    <div class="flex flex-col items-center justify-center">
 
-        <!-- Logo -->
-        <img src="{% static 'images/logo.png' %}" alt="Logo" class="w-24 h-auto animate-pulse">
-
-        <!-- Spinner -->
-        <div class="w-10 h-10 border-4 border-gray-300 border-t-gray-700 rounded-full animate-spin"></div>
-
+        <!-- Logo Zoom Animation -->
+        <img src="{% static 'images/logo.png' %}" alt="Logo" class="w-24 h-auto animate-logo-zoom">
+        <!-- <p class="text-center text-xl mt-2">PRIME HUB</p> -->
     </div>
 </div>
 
+<style>
+    /* Zoom In-Out Animation */
+    @keyframes logoZoom {
+
+        0%,
+        100% {
+            transform: scale(0.9);
+            opacity: 0.8;
+        }
+
+        50% {
+            transform: scale(1.15);
+            opacity: 1;
+        }
+    }
+
+    .animate-logo-zoom {
+        animation: logoZoom 1.6s ease-in-out infinite;
+    }
+</style>
 
 <script>
     window.addEventListener("load", () => {
